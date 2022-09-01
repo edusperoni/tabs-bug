@@ -1,13 +1,36 @@
-<TabView androidTabsPosition="bottom">
-    <TabViewItem title="Home" >
-        <Frame defaultPage="home/home-items-page" />
-    </TabViewItem>
+<Page xmlns:mdt="@nativescript-community/ui-material-tabs">
+    <mdt:Tabs selectedIndex="0">
+        <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
+        <mdt:TabStrip>
+            <mdt:TabStripItem>
+                <Label text="Home"></Label>
+                <Image src="font://&#xf015;" class="fas"></Image>
+            </mdt:TabStripItem>
+            <mdt:TabStripItem>Item class="special">
+                <Label text="Account"></Label>
+                <Image src="font://&#xf007;" class="fas"></Image>
+            </mdt:TabStripItem>
+            <mdt:TabStripItem>Item class="special">
+                <Label text="Search"></Label>
+                <Image src="font://&#xf00e;" class="fas"></Image>
+            </mdt:TabStripItem>
+        </mdt:TabStrip>
 
-    <TabViewItem title="Browse" >
-        <Frame defaultPage="browse/browse-page" />
-    </TabViewItem>
-
-    <TabViewItem title="Search" >
-        <Frame defaultPage="search/search-page" />
-    </TabViewItem>
-</TabView>
+        <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
+        <mdt:TabContentItem>
+            <GridLayout>
+                <Frame defaultPage="search/search-page" />
+            </GridLayout>
+        </mdt:TabContentItem>
+        <mdt:TabContentItem>
+            <GridLayout>
+                <Frame defaultPage="browse/browse-page" />
+            </GridLayout>
+        </mdt:TabContentItem>
+        <mdt:TabContentItem>
+            <GridLayout>
+                <Frame defaultPage="search/search-page" />
+            </GridLayout>
+        </mdt:TabContentItem>
+    </mdt:Tabs>
+</Page>
